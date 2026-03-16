@@ -57,22 +57,23 @@ See [Get the IP address of the VM](#get-the-ip-address-of-the-vm).
 
 ## Create a VM
 
-Complete these steps to create a VM:
+Complete these steps:
 
 <!-- no toc -->
-1. [Create a subscription](#create-a-subscription)
-2. [Create a new `SSH` key](./vm-access.md#create-a-new-ssh-key)
-3. [Create a VM using the subscription](#create-a-vm-using-the-subscription)
+1. [Connect to the correct network](#connect-to-the-correct-network).
+2. [Create a subscription](#create-a-subscription).
+3. [Create a VM using the subscription](#create-a-vm-using-the-subscription).
 
 ### Create a subscription
 
 1. [Go to the VMs site](#go-to-the-vms-site).
-2. Click `NEW`.
-3. Click `ADD SUBSCRIPTION`.
-4. Click `Software Engineering Toolkit`.
-5. Click checkmark.
-6. Go to the [`SUBSCRIPTIONS`](https://vm.innopolis.university/#Workspaces/MyAccountExtension/subscriptions) tab.
-7. Look at the `SUBSCRIPTION` column.
+2. Click `+ NEW`.
+3. Click `MY ACCOUNT`.
+4. Click `ADD SUBSCRIPTION`.
+5. Click `Software Engineering Toolkit`.
+6. Click the checkmark.
+7. Go to the [`SUBSCRIPTIONS`](https://vm.innopolis.university/#Workspaces/MyAccountExtension/subscriptions) tab.
+8. Look at the `SUBSCRIPTION` column.
 
    You should see there `Software Engineering Toolkit`.
 
@@ -86,8 +87,8 @@ Complete these steps to create a VM:
 
 ### Create a VM using the subscription
 
-1. [Create a new `SSH` key](./vm-access.md#create-a-new-ssh-key) if not created.
-2. [Go to the `vm.innopolis.university` site](#go-to-the-vms-site).
+1. [Set up `SSH` (LOCAL)](./vm-access.md#set-up-ssh-local) if it's not yet set up.
+2. [Go to the VMs site](#go-to-the-vms-site).
 3. Click `+ NEW`.
 4. Click `STANDALONE VIRTUAL MACHINE`.
 5. Click `FROM GALLERY`.
@@ -99,7 +100,7 @@ Complete these steps to create a VM:
     - `NEW PASSWORD`: Write the password.
     - `CONFIRM`: Write the same password.
     - `ADMINISTRATOR SSH KEY`:
-       1. [Find the `SSH` key files](./vm-access.md#find-the-ssh-key-files).
+       1. [Get the public `SSH` key (LOCAL)](./vm-access.md#get-the-public-ssh-key-local).
        2. Copy the **full content** of the public key file.
        3. Paste the content into the input field.
 10. Note that the user's name on the VM is [`root`](./linux.md#the-user-root).
