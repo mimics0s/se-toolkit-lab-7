@@ -5,7 +5,7 @@
 - [What is `Qwen Code`](#what-is-qwen-code)
 - [`Qwen` API](#qwen-api)
 - [`Qwen Code` credentials file](#qwen-code-credentials-file)
-- [Set up the `Qwen Code` (LOCAL)](#set-up-the-qwen-code-local)
+- [Set up `Qwen Code` (LOCAL)](#set-up-qwen-code-local)
   - [Set up the `Qwen Code` CLI (LOCAL)](#set-up-the-qwen-code-cli-local)
   - [Set up the `Qwen Code Companion` extension for `VS Code`](#set-up-the-qwen-code-companion-extension-for-vs-code)
   - [Set up the `GitHub Copilot Chat` extension for `VS Code`](#set-up-the-github-copilot-chat-extension-for-vs-code)
@@ -31,7 +31,7 @@
 
 See:
 
-- [Set up the `Qwen Code` (LOCAL)](#set-up-the-qwen-code-local).
+- [Set up `Qwen Code` (LOCAL)](#set-up-qwen-code-local).
 - [Set up the `Qwen Code` CLI (REMOTE)](./qwen-code-api.md#set-up-the-qwen-code-cli-remote).
 - [Set up the `Qwen Code` API (REMOTE)](./qwen-code-api.md).
 
@@ -49,7 +49,7 @@ A file where `Qwen Code` stores credentials for the [user](./operating-system.md
 
 Path: `~/.qwen/oauth_creds.json`.
 
-## Set up the `Qwen Code` (LOCAL)
+## Set up `Qwen Code` (LOCAL)
 
 > [!NOTE]
 > See [`Qwen Code`](#what-is-qwen-code).
