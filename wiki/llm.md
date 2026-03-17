@@ -67,7 +67,7 @@ An LLM provider API allows [applications](./software-types.md#application) to:
 
 ### `OpenAI`-compatible API
 
-An `OpenAI`-compatible API is an [LLM provider API](#llm-provider-api) that follows the same [request](./http.md#http-request) and [response](./http.md#http-response) format as the `OpenAI` API (an [`HTTP` API](./web-api.md#http-api)).
+An `OpenAI`-compatible API is an [LLM provider API](#llm-provider-api) that follows the same [request](./http.md#http-request) and [response](./http.md#http-response) format as the [`OpenAI` API](#openai-api).
 
 The same [client](./web-infrastructure.md#web-client) code can work with different `OpenAI`-compatible [LLM provider APIs](#llm-provider-api) by changing only the [base URL](./web-api.md#base-url) and the [API key](./web-api.md#api-key).
 
@@ -119,7 +119,7 @@ Docs:
 
 ### Free models
 
-- [`OpenRouter`](#openrouter) provides [free models](https://openrouter.ai/collections/free-models).
+- [`OpenRouter` API](#openrouter-api) provides [free models](https://openrouter.ai/collections/free-models).
 
 ## Token
 
