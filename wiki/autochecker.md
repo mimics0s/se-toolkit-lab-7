@@ -26,10 +26,7 @@ The `Autochecker` bot in Telegram.
 
 ### Set up the `Autochecker` bot
 
-Complete these steps:
-
-<!-- no toc -->
-1. Open in `Telegram`: <https://t.me/auchebot>.
+1. Open in `Telegram` the [`Autochecker` bot](#the-autochecker-bot).
 2. Send `/start`.
 3. Provide the info:
 
@@ -38,7 +35,7 @@ Complete these steps:
 
 ### Check the task using the `Autochecker` bot
 
-1. Open in `Telegram`: <https://t.me/auchebot>.
+1. Open in `Telegram` the [`Autochecker` bot](#the-autochecker-bot).
 2. Click the lab.
 3. Click the task.
 
