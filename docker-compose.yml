@@ -90,6 +90,6 @@ volumes:
   postgres_data:
 
 networks:
-  default:
+  lms-network:
     name: lms-network
     attachable: true
