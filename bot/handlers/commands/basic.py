@@ -124,8 +124,6 @@ def handle_scores(command: str) -> str:
     Returns:
         Scores information for the specified lab.
     """
-    import re
-
     # Parse lab argument
     parts = command.strip().split()
     if len(parts) < 2:
@@ -139,23 +137,9 @@ def handle_scores(command: str) -> str:
         labs = client.get_labs()
         lab = None
 
-        # Extract lab number from argument (e.g., "lab-04" -> "04", "lab01" -> "01")
-        lab_num_match = re.search(r"(\d+)", lab_arg)
-        lab_num = lab_num_match.group(1) if lab_num_match else None
-
         for l in labs:
             title_lower = l["title"].lower()
-            # Try matching by lab number first (e.g., "lab-04" matches "Lab 04 – ...")
-            if lab_num:
-                if lab_num in title_lower or f"0{lab_num}" in title_lower:
-                    lab = l
-                    break
-                # Also check if title starts with "Lab XX" where XX matches
-                title_num_match = re.search(r"lab\s*(\d+)", title_lower)
-                if title_num_match and title_num_match.group(1) == lab_num.lstrip("0"):
-                    lab = l
-                    break
-            # Fallback: direct substring match
+            # Direct substring match
             if lab_arg in title_lower or title_lower.startswith(lab_arg):
                 lab = l
                 break
