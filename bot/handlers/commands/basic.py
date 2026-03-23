@@ -6,6 +6,7 @@ No Telegram dependency — same function works from --test mode or Telegram.
 
 from config import load_config
 from services.api_client import LMSAPIClient
+from handlers.buttons import get_start_keyboard
 
 
 def _get_api_client() -> LMSAPIClient:
@@ -28,9 +29,30 @@ def handle_start(command: str) -> str:
         command: The command text (e.g., "/start").
 
     Returns:
-        Welcome message.
+        Welcome message with inline keyboard buttons.
     """
-    return "Welcome to the LMS Bot! Use /help to see available commands."
+    welcome = """Welcome to the LMS Bot! 🎓
+
+I can help you explore lab data, check scores, and analyze student performance.
+
+Just ask me questions like:
+• "What labs are available?"
+• "Show me scores for lab 4"
+• "Which lab has the lowest pass rate?"
+• "Who are the top 5 students?"
+
+Or use the buttons below to get started!"""
+    
+    # Include keyboard info in the response for test mode
+    keyboard = get_start_keyboard()
+    keyboard_info = "\n\n[Inline keyboard with buttons: "
+    button_labels = []
+    for row in keyboard:
+        for btn in row:
+            button_labels.append(btn["text"])
+    keyboard_info += ", ".join(button_labels) + "]"
+    
+    return welcome + keyboard_info
 
 
 def handle_help(command: str) -> str:
