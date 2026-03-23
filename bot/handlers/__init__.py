@@ -12,6 +12,7 @@ from handlers.commands.basic import (
     handle_labs,
     handle_scores,
 )
+from handlers.intent_router import route_natural_language
 
 __all__ = [
     "handle_start",
@@ -19,4 +20,5 @@ __all__ = [
     "handle_health",
     "handle_labs",
     "handle_scores",
+    "route_natural_language",
 ]
