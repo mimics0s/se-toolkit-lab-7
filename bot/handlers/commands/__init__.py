@@ -1,10 +1,4 @@
-"""Command handlers for the Telegram bot.
-
-Handlers are pure functions: they take input and return text.
-They don't know about Telegram — same function works from --test mode,
-unit tests, or Telegram.
-"""
-
+"""Command handlers submodule."""
 from handlers.commands.basic import (
     handle_start,
     handle_help,
