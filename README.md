@@ -91,3 +91,65 @@ By the end of this lab, you should be able to say:
 2. [Backend Integration](./lab/tasks/required/task-2.md) — P0: slash commands + real data
 3. [Intent-Based Natural Language Routing](./lab/tasks/required/task-3.md) — P1: LLM tool use
 4. [Containerize and Document](./lab/tasks/required/task-4.md) — P3: containerize + deploy
+
+## Deploy
+
+This section describes how to deploy the Telegram bot alongside the LMS backend using Docker Compose.
+
+### Prerequisites
+
+1. **Environment file**: Create `.env.docker.secret` from `.env.docker.example`:
+   ```bash
+   cp .env.docker.example .env.docker.secret
+   ```
+
+2. **Configure required variables** in `.env.docker.secret`:
+   - `BOT_TOKEN` — Get from [@BotFather](https://t.me/BotFather) on Telegram
+   - `LMS_API_KEY` — Your LMS backend API key
+   - `LLM_API_KEY` — Your LLM provider API key (e.g., OpenAI, Anthropic)
+   - `LLM_API_BASE_URL` — LLM API endpoint (e.g., `https://api.openai.com/v1`)
+   - `LLM_API_MODEL` — Model name (e.g., `gpt-4o-mini`)
+   - `LMS_API_BASE_URL` — Backend URL for bot (default: `http://backend:8000`)
+
+### Deploy with Docker Compose
+
+1. **Start all services** (backend + bot):
+   ```bash
+   docker compose --env-file .env.docker.secret up --build -d
+   ```
+
+2. **Check service status**:
+   ```bash
+   docker compose ps
+   ```
+   You should see `backend`, `postgres`, `caddy`, and `bot` all running.
+
+3. **View bot logs**:
+   ```bash
+   docker compose logs -f bot
+   ```
+
+### Verify deployment
+
+1. **Backend health check**:
+   ```bash
+   curl -sf http://localhost:42002/docs
+   ```
+
+2. **Test bot commands** (via Telegram):
+   - Send `/start` to your bot — should see welcome message with inline buttons
+   - Send `/help` — should list available commands
+   - Send `/health` — should report backend status
+   - Send plain text: "What labs are available?" — should fetch data from backend
+
+3. **Check bot is running**:
+   ```bash
+   docker compose ps | grep bot
+   ```
+   Should show `bot` with status `Up`.
+
+### Troubleshooting
+
+- **Bot not responding**: Check logs with `docker compose logs bot`
+- **Backend unreachable**: Ensure backend is healthy: `docker compose ps backend`
+- **LLM errors**: Verify `LLM_API_KEY` and `LLM_API_BASE_URL` are correct
